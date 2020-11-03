@@ -2,37 +2,120 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  cursor: pointer;
+  padding: 12px 24px;
+  border:none;
+  outline: none;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-primary {
+  background-color: rgb(21, 116, 84);
+  color:#d6d3e7;
+}
+.btn-classic {
+  background-color: rgb(21, 62, 116);
+  color:#d6d3e7;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  width: 100%;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style: none;
+  width: 60%;
+  min-width: 360px;
+  margin:0 auto;
+  padding:1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar ul li {
+  margin-right: 1rem;
+  font-size: large;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: rgba(2, 66, 50, 0.7);
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  color: rgba(2, 66, 50, 1);
+  
+}
+
+.container {
+  /* background: lightcoral; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 1rem 0.25rem;
 }
 
-.App-link {
-  color: #61dafb;
+.container form {
+  padding: 1rem 0.25rem;
+  border:1px solid rgba(24, 161, 88, 0.2);
+  box-shadow: 0 5px 20px rgba(7, 47, 26, 0.274);
+  border-radius: 10px;
+  width: 80%;
+  margin:2rem auto;
+  min-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form .input-group {
+  width:80%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-group > input {
+  flex-grow: 1;
+  margin-left: 1rem;
+  max-width: 70%;
+  outline: none;
+  border:none;
+  /* border-radius: 5px; */
+  line-height: 1.5rem;
+  border-bottom: 2px solid rgba(2, 66, 50, 1);
+}
+
+.cta-group {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.cta-group > input[type=submit]{
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.cta-group .info {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.cta-group .info a{
+  font-weight: 400;
+  color: darkblue;
+  text-decoration: none;
 }

@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
+import { Link, RouteComponentProps } from 'react-router-dom'
 import firebase from '../firebase/app'
 const auth = firebase.auth()
-const SignUp = () => {
+const SignUp:React.FC<RouteComponentProps> = (props) => {
   const [fields, setFields] = useState({
     email: '',
     password: ''
@@ -15,14 +16,15 @@ const SignUp = () => {
     } else {
       auth.createUserWithEmailAndPassword(fields.email, fields.password).then((creds) => {
         console.log(`${creds.user?.email} just signed up in\redirect now`)
+        props.history.push('/account')
       }).catch(err => console.log(err))
     }
 
   } 
   return (
     <div className='container'>
-      <h3 className="title">Sign Up</h3>
       <form onSubmit={handleSubmit}>
+        <h3 className="title">Sign Up</h3>
         <div className="input-group">
           <label htmlFor="email">E-Mail</label>
           <input 
@@ -51,7 +53,10 @@ const SignUp = () => {
             })}}
           />
         </div>
-        <input type="submit" value="Sign Up" className="btn btn-primary"/>
+        <div className="cta-group">
+          <input type="submit" value="Sign Up" className="btn btn-primary"/>
+          <span className="info">Already have An Account? <Link to='/signin'>Login</Link></span>
+        </div>
       </form>
 
     </div>
